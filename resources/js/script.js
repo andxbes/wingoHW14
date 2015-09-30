@@ -68,13 +68,14 @@ function StudentsList() {
 
     $("#students_list li a").click(function () {
         ob.addTableWithRating(this);
-        $(this).off("click");
+      
 
         $("table[style!='display: none']").hide('slow');//убрать видимую таблицу 
 
         $(this).click(function () {
             $currentTable = $("#" + $(this).attr("id") + " ~table");
             $currentTable.toggle("slow");
+           
         });
 
     });
@@ -102,6 +103,7 @@ function StudentsList() {
     };
 
     this.buildTable = function (data, $el) {
+        $("#" + $el.attr("id") + " ~table").remove();
         if (data.length === 0)
             return;
         $parent = $el.parent();

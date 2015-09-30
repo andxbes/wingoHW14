@@ -14,6 +14,6 @@ if(preg_match($paternName, $name) && preg_match($paternName, $surname)){
     echo "OK";
 }else {
     die("Недопустимый запрос");
-    //сообщение выводится но ajax не считает его за ошибку .
+ 
 }
 
